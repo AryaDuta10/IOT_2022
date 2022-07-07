@@ -145,9 +145,9 @@ void loop() {
   if(!client.loop())
     client.connect("ESP8266Client22");
     
-  val = digitalRead(5); // IR Sensor output pin connected to D1  
-  Serial.println(val);  // see the value in serial m0nitor in Arduino IDE  
-  delay(100);      // for timer  
+  val = digitalRead(5);   
+  Serial.println(val);   
+  delay(100);     
   if(val == 1 )  
   {  
    digitalWrite(14,HIGH); // LED ON  
@@ -181,13 +181,13 @@ void loop() {
     distance= duration*0.034/2;
     safetyDistance = distance;
     if (safetyDistance <= 5){
-    // goes from 0 degrees to 180 degrees // in steps of 1 degree
-    myservo.write(180); // tell servo to go to position in variable 'pos'
-    delay(3000); // waits 15ms for the servo to reach the position
+    
+    myservo.write(180); 
+    delay(3000); 
     }
-    else{ // goes from 180 degrees to 0 degrees
-    myservo.write(0); // tell servo to go to position in variable 'pos'
-    delay(20); // waits 15ms for the servo to reach the position }
+    else{ 
+    myservo.write(0); 
+    delay(20);  }
     Serial.print("Distance: ");
     Serial.println(distance);
 }
